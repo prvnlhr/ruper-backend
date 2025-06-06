@@ -10,11 +10,10 @@ interface ITransactionCategory {
 
 // Main transaction interface
 export interface ITransaction extends Document {
-  userId: Types.ObjectId;
+  userId: string;
   type: "income" | "expense";
   amount: number;
   category: ITransactionCategory;
-  date: Date;
   description?: string;
   createdAt: Date;
   updatedAt: Date;
@@ -24,7 +23,7 @@ export interface ITransaction extends Document {
 const TransactionSchema = new Schema<ITransaction>(
   {
     userId: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "User",
       required: true,
     },
@@ -42,10 +41,6 @@ const TransactionSchema = new Schema<ITransaction>(
       id: { type: String, required: true },
       name: { type: String, required: true },
       icon: { type: String, required: true },
-    },
-    date: {
-      type: Date,
-      required: true,
     },
     description: {
       type: String,
