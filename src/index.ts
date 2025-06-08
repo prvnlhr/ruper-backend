@@ -12,7 +12,8 @@ const PORT: number = parseInt(process.env.PORT as string, 10) || 9000;
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://ruper-backend.onrender.com",
+  "https://ruper-frontend.vercel.app",
+  "https://ruper-frontend.vercel.app/",
 ];
 
 // Database connection
