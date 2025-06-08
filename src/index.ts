@@ -10,7 +10,10 @@ import { clerkMiddleware } from "@clerk/express";
 const app: Application = express();
 const PORT: number = parseInt(process.env.PORT as string, 10) || 9000;
 
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://ruper-backend.onrender.com",
+];
 
 // Database connection
 connectToDB();
